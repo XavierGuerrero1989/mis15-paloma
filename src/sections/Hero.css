@@ -1,0 +1,68 @@
+.hero {
+  width: 100%;
+  min-height: 100svh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor centrado */
+.heroInner {
+  width: 100%;
+  max-width: var(--container);
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Texto principal */
+.heroTitle {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--c-gold-light);
+  text-align: center;
+
+  /* borde negro sutil (stroke fake)
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.55),
+     1px -1px 0 rgba(0,0,0,0.55),
+    -1px  1px 0 rgba(0,0,0,0.55),
+     1px  1px 0 rgba(0,0,0,0.55); */
+}
+
+.heroName {
+  margin-top: 60px;
+  font-family: "Great Vibes", cursive;
+  font-size: 8vh;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--c-gold-light);
+  text-align: center;
+
+  /* borde negro sutil */
+  /* text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.55),
+     1px -1px 0 rgba(0,0,0,0.55),
+    -1px  1px 0 rgba(0,0,0,0.55),
+     1px  1px 0 rgba(0,0,0,0.55); */
+
+  letter-spacing: 1px;
+}
+
+
+
+@media (min-width: 520px) {
+  .heroTitle {
+    font-size: 46px;
+  }
+
+  .heroName {
+    font-size: 56px;
+  }
+}
+

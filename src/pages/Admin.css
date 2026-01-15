@@ -1,0 +1,187 @@
+.adminPage{
+  min-height: 100vh;
+  padding: clamp(16px, 4vw, 40px);
+  display: flex;
+  justify-content: center;
+  background: var(--bg, #e9efe9);
+}
+
+/* Card sin altura fija, crece con contenido */
+.adminCard{
+  width: min(1100px, 100%);
+  background: var(--paper, #ffffff);
+  border-radius: 34px;
+  padding: clamp(22px, 4vw, 46px);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Doble borde dorado */
+.adminCard::before,
+.adminCard::after{
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 28px;
+  border: 2px solid rgba(205, 163, 80, 0.55);
+  pointer-events: none;
+}
+
+.adminCard::after{
+  inset: 22px;
+  border-width: 1.5px;
+  border-color: rgba(205, 163, 80, 0.35);
+}
+
+.adminHeader{
+  text-align: center;
+}
+
+.adminTitle{
+  margin: 6px 0 18px;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 800;
+  color: #222;
+}
+
+/* ✅ Mini celdas de totales */
+.adminStatsGrid{
+  margin: 14px auto 6px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.adminStat{
+  border-radius: 16px;
+  padding: 12px 10px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(205, 163, 80, 0.28);
+  text-align: center;
+}
+
+.adminStatValue{
+  font-size: 20px;
+  font-weight: 800;
+  color: #222;
+  line-height: 1.1;
+}
+
+.adminStatLabel{
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Empty state */
+.adminEmpty{
+  margin-top: 20px;
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.02);
+  text-align: center;
+}
+
+.adminEmptyTitle{
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.adminEmptyText{
+  margin: 8px 0 0;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Wrapper: scroll vertical/horizontal dentro del card */
+.adminTableWrap{
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow: auto;
+  max-height: min(520px, calc(100vh - 320px));
+  background: #fff;
+}
+
+/* Tabla */
+.adminTable{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 980px; /* para que en pantallas chicas haya scroll horizontal */
+}
+
+/* ✅ Centrar encabezados y celdas */
+.adminTable th,
+.adminTable td{
+  padding: 14px 16px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Header sticky */
+.adminTable thead th{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  font-weight: 700;
+  color: #555;
+}
+
+/* Hover */
+.adminTable tbody tr:hover{
+  background: rgba(0,0,0,0.02);
+}
+
+/* Column behavior */
+.colName{
+  text-align: center;
+  white-space: nowrap;
+  min-width: 190px;
+}
+
+.colCenter{
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Tema sugerido puede envolver (pero centrado) */
+.tdTema{
+  white-space: normal;
+  min-width: 300px;
+  line-height: 1.35;
+}
+
+/* Columna fecha un poco más ancha */
+.adminTable th:last-child,
+.adminTable td:last-child{
+  min-width: 175px;
+}
+
+/* Responsivo stats */
+@media (max-width: 1100px){
+  .adminStatsGrid{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px){
+  .adminStatsGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .adminStatValue{
+    font-size: 18px;
+  }
+  .adminTable th,
+  .adminTable td{
+    padding: 12px 12px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,16 @@
+:root{
+  --c-white: #ffffff;
+  --c-beige: #f3ead7;
+  --c-crudo: #f7f2e8;
+  --c-gold: #c9a24a;
+  --c-gold-light: #e6c97a;
+
+
+  --text: #1a1a1a;
+  --muted: rgba(0,0,0,.65);
+  --card: rgba(255,255,255,.75);
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+
+  --radius: 18px;
+  --container: 520px;
+}

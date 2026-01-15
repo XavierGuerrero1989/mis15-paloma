@@ -1,0 +1,64 @@
+.loginWrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+
+  background: #ffffff;
+  border-radius: 22px;
+
+  /* doble marco dorado */
+  border: 1.5px solid var(--c-gold-light);
+  outline: 1px solid rgba(230, 201, 122, 0.4);
+  outline-offset: -8px;
+
+  text-align: center;
+}
+
+.loginCard h1 {
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+.loginCard p {
+  font-size: 15px;
+  opacity: 0.75;
+  margin-bottom: 28px;
+}
+
+.loginCard form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loginCard input {
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.loginCard button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 999px;
+  border: 1.5px solid #000;
+  background: transparent;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.loginError {
+  margin-top: 12px;
+  color: #b30000;
+  font-size: 14px;
+}

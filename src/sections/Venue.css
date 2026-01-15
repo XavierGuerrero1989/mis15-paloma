@@ -1,0 +1,104 @@
+/* =========================
+   VENUE – módulo aislado
+   ========================= */
+
+.venue {
+  padding: 36px 0;
+}
+
+/* Card estilo invitación (doble marco dorado) */
+.venue .venueCard {
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px 24px;
+  text-align: center;
+
+  /* borde dorado fino */
+  border: 1.5px solid var(--c-gold-light);
+
+  /* marco interno sutil */
+  outline: 1px solid rgba(230, 201, 122, 0.4);
+  outline-offset: -8px;
+}
+
+/* Ícono ubicación outline */
+.venue .venueIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: var(--c-gold-light);
+}
+
+/* Título */
+.venue .venueTitle {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Nombre del lugar */
+.venue .venueName {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Dirección */
+.venue .venueAddress {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Extra */
+.venue .venueExtra {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Acciones */
+.venue .venueActions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Botón dorado + borde negro + letras negras */
+.venue .venueBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+
+  background: var(--c-gold-light);
+  border: 1px solid #000;
+  color: #000;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+
+  transition: transform 0.15s ease;
+}
+
+.venue .venueBtn:active {
+  transform: scale(0.98);
+}
+
+/* Desktop */
+@media (min-width: 520px) {
+  .venue .venueCard {
+    padding: 38px 34px;
+  }
+
+  .venue .venueTitle,
+  .venue .venueName {
+    font-size: 20px;
+  }
+}

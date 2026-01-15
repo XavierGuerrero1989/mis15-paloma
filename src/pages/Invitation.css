@@ -1,0 +1,136 @@
+.inviteRoot{
+  min-height: 100vh;
+  position: relative;
+
+  /* fondo base */
+  background: var(--bg, #e9efe9);
+
+  /* decoraciones */
+  background-image: var(--invite-deco-images);
+  background-repeat: no-repeat;
+  background-position: var(--invite-deco-positions);
+  background-size: var(--invite-deco-sizes);
+
+  /* que se sientan como parte del papel al scrollear */
+  background-attachment: fixed;
+
+  /* extra: suaviza y “pone marca de agua” */
+  opacity: 1;
+}
+
+/* ✅ Truco: capa extra para bajar opacidad SOLO a las decoraciones (sin tocar contenido)
+   usando pseudo-elemento con el mismo background */
+.inviteRoot::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: var(--invite-deco-images);
+  background-repeat: no-repeat;
+  background-position: var(--invite-deco-positions);
+  background-size: var(--invite-deco-sizes);
+  background-attachment: fixed;
+
+  opacity: 0.16;  /* subí/bajá esto para más/menos presencia */
+}
+
+/* el contenido arriba de la deco */
+.inviteRoot > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* iOS: fixed puede dar glitches */
+@media (max-width: 520px){
+  .inviteRoot::before{
+    background-attachment: scroll;
+    opacity: 0.14;
+  }
+}
+
+/* 🔊 Controles */
+.musicControls{
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 9999;
+  display: flex;
+  gap: 10px;
+}
+
+.musicBtn{
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(205, 163, 80, 0.35);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.musicBtn:active{
+  transform: scale(0.98);
+}
+
+/* Toast autoplay bloqueado */
+.musicToast{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 78px;
+  z-index: 9999;
+  width: min(520px, calc(100% - 24px));
+}
+
+.musicToastInner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(205, 163, 80, 0.28);
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.musicToastText{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #333;
+  font-size: 14px;
+}
+
+.musicToastText span{
+  color: #666;
+  font-weight: 500;
+}
+
+.musicToastBtn{
+  border: 1px solid rgba(205, 163, 80, 0.35);
+  background: rgba(0,0,0,0.02);
+  color: #333;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.musicToastBtn:active{
+  transform: scale(0.99);
+}
+
+@media (max-width: 520px){
+  .musicBtn{
+    width: 46px;
+    height: 46px;
+  }
+}

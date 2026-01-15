@@ -1,0 +1,16 @@
+.finalQuote {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Imagen final */
+.finalQuoteImage {
+  width: 100%;
+  max-width: 480px; /* controla ancho en desktop */
+  height: auto;
+  display: block;
+}
