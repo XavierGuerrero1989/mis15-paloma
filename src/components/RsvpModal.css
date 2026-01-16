@@ -6,7 +6,12 @@
   align-items: center;
   justify-content: center;
   padding: 18px;
-  z-index: 9999;
+
+  /* ✅ “no me tapa nada” */
+  z-index: 2147483647;
+
+  /* mejora taps en mobile */
+  touch-action: none;
 }
 
 .rsvpModal {
@@ -22,6 +27,13 @@
   /* marco interno */
   outline: 1px solid rgba(230, 201, 122, 0.4);
   outline-offset: -8px;
+
+  /* por si el contenido crece en pantallas chicas */
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+
+  /* suaviza el scroll en iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 .rsvpHeader {
@@ -70,6 +82,7 @@
   padding: 12px 12px;
   font-size: 14px;
   outline: none;
+  background: #fff;
 }
 
 .rsvpInput:focus {

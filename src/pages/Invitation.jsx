@@ -10,7 +10,7 @@ import FinalQuote from "../sections/FinalQuote";
 
 import "./Invitation.css";
 
-const AUDIO_SRC = "/audio/tema.mp3";
+const AUDIO_SRC = "../../public/tema.mp3";
 
 const DECOS = [
   "/deco1.png",

@@ -1,10 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { db } from "../firebase/firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import "./RsvpModal.css";
 
 export default function RsvpModal({ open, onClose, guestSlug }) {
-  const safeSlug = useMemo(() => (guestSlug || "invitado").toLowerCase(), [guestSlug]);
+  const safeSlug = useMemo(
+    () => (guestSlug || "invitado").toLowerCase(),
+    [guestSlug]
+  );
 
   const [form, setForm] = useState({
     nombreCompleto: "",
@@ -20,6 +24,8 @@ export default function RsvpModal({ open, onClose, guestSlug }) {
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState({ type: "", msg: "" }); // type: "ok" | "err"
 
+  const isAsiste = form.asiste === "si";
+
   // Reset cuando abre
   useEffect(() => {
     if (!open) return;
@@ -34,9 +40,17 @@ export default function RsvpModal({ open, onClose, guestSlug }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  if (!open) return null;
+  // Bloquear scroll del body mientras el modal está abierto (mejora UX y evita “saltos”)
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
 
-  const isAsiste = form.asiste === "si";
+  if (!open) return null;
 
   function setField(key, value) {
     setForm((p) => ({ ...p, [key]: value }));
@@ -48,13 +62,15 @@ export default function RsvpModal({ open, onClose, guestSlug }) {
 
     if (isAsiste) {
       const n = Number(form.personas);
-      if (!Number.isFinite(n) || n < 1 || n > 20) return "Cantidad de personas inválida (1 a 20).";
+      if (!Number.isFinite(n) || n < 1 || n > 20)
+        return "Cantidad de personas inválida (1 a 20).";
     }
 
     // Tema sugerido opcional, pero si completan uno pedimos el otro
     const t = form.temaTitulo.trim();
     const a = form.temaAutor.trim();
-    if ((t && !a) || (!t && a)) return "Si sugerís un tema, completá autor y título.";
+    if ((t && !a) || (!t && a))
+      return "Si sugerís un tema, completá autor y título.";
 
     return "";
   }
@@ -112,7 +128,8 @@ export default function RsvpModal({ open, onClose, guestSlug }) {
     }
   }
 
-  return (
+  // ✅ Portal: el modal se monta en <body> y no lo tapa ningún section (FinalQuote, etc.)
+  return createPortal(
     <div className="rsvpOverlay" onMouseDown={onClose}>
       <div className="rsvpModal" onMouseDown={(e) => e.stopPropagation()}>
         <div className="rsvpHeader">
@@ -230,6 +247,7 @@ export default function RsvpModal({ open, onClose, guestSlug }) {
           </button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
