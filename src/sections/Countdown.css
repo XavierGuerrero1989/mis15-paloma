@@ -5,7 +5,8 @@
 /* Card estilo invitación */
 .countdownCard {
   position: relative;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
+
   border-radius: 18px;
   padding: 32px 24px;
   text-align: center;

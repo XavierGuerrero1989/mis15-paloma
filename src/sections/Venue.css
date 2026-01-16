@@ -1,64 +1,75 @@
 /* =========================
-   VENUE – módulo aislado
+   VENUE – estilo “premium” (como Gift)
    ========================= */
 
 .venue {
-  padding: 36px 0;
+  padding: 56px 0;
 }
 
-/* Card estilo invitación (doble marco dorado) */
+/* Card estilo invitación (doble marco + sombra suave) */
 .venue .venueCard {
   position: relative;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 32px 24px;
   text-align: center;
 
-  /* borde dorado fino */
-  border: 1.5px solid var(--c-gold-light);
+  /* look como Gift */
+  background: var(--card-bg, #fffaf1);
+  border-radius: 26px;
+  padding: 34px 18px 26px;
 
-  /* marco interno sutil */
-  outline: 1px solid rgba(230, 201, 122, 0.4);
-  outline-offset: -8px;
+  /* doble borde + marco */
+  border: 2px solid rgba(190, 150, 90, 0.35);
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.75),
+    0 0 0 8px rgba(190, 150, 90, 0.18);
 }
 
-/* Ícono ubicación outline */
+
+
+/* Ícono en círculo como Gift */
 .venue .venueIcon {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  color: var(--c-gold-light);
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+
+  color: rgba(160, 120, 70, 0.9);
+  border: 1.5px solid rgba(190, 150, 90, 0.35);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* Título */
 .venue .venueTitle {
-  margin: 0 0 14px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 900;
+  color: #1b1b1b;
+  letter-spacing: -0.3px;
 }
 
 /* Nombre del lugar */
 .venue .venueName {
   margin: 0 0 6px;
   font-size: 18px;
-  font-weight: 600;
-  color: #111;
+  font-weight: 700;
+  color: #1b1b1b;
 }
 
 /* Dirección */
 .venue .venueAddress {
   margin: 0 0 6px;
-  font-size: 14px;
-  color: #444;
-  line-height: 1.4;
+  font-size: 15.5px;
+  color: rgba(0, 0, 0, 0.68);
+  line-height: 1.45;
 }
 
 /* Extra */
 .venue .venueExtra {
   margin: 0 0 18px;
-  font-size: 13px;
-  color: #666;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 /* Acciones */
@@ -67,38 +78,49 @@
   justify-content: center;
 }
 
-/* Botón dorado + borde negro + letras negras */
+/* Botón dorado como Gift */
 .venue .venueBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+
+  padding: 14px 18px;
   border-radius: 999px;
 
-  background: var(--c-gold-light);
-  border: 1px solid #000;
-  color: #000;
+  background: var(--gold, #e7c66a);
+  color: #151515;
 
   text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
   font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
 
-  transition: transform 0.15s ease;
+  border: none;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .venue .venueBtn:active {
-  transform: scale(0.98);
+  transform: translateY(1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 /* Desktop */
 @media (min-width: 520px) {
   .venue .venueCard {
-    padding: 38px 34px;
+    padding: 38px 34px 30px;
   }
 
-  .venue .venueTitle,
+  .venue .venueTitle {
+    font-size: 32px;
+  }
+
   .venue .venueName {
     font-size: 20px;
+  }
+
+  .venue .venueAddress {
+    font-size: 16px;
   }
 }

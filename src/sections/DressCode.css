@@ -3,7 +3,7 @@
 }
 
 .dresscodeCard {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: var(--radius);
   padding: 28px 22px;
   text-align: center;

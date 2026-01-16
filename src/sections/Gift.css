@@ -1,90 +1,251 @@
 .gift {
-  padding: 44px 0;
+  padding: 56px 0;
 }
 
-/* Card estilo invitación */
 .giftCard {
   position: relative;
-  padding: 32px 24px;
+  border-radius: 26px;
+  background: var(--card-bg, #fffaf1);
+  padding: 34px 18px 26px;
   text-align: center;
-  background: #fff;
 
-  border-radius: 18px;
-
-  /* borde dorado fino */
-  border: 1.5px solid var(--c-gold-light);
-
-  /* marco interno sutil */
-  outline: 1px solid rgba(230, 201, 122, 0.4);
-  outline-offset: -8px;
+  /* doble borde “marca” */
+  border: 2px solid rgba(190, 150, 90, 0.35);
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.75),
+    0 0 0 8px rgba(190, 150, 90, 0.18);
 }
 
-/* Ornamento superior
 .giftOrnament {
-  font-size: 18px;
-  color: var(--c-gold-light);
-  margin-bottom: 8px;
-} */
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: rgba(160, 120, 70, 0.9);
 
-.giftOrnament {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  color: var(--c-gold-light); /* o #000 si querés negro */
+  border: 1.5px solid rgba(190, 150, 90, 0.35);
+  background: rgba(255, 255, 255, 0.7);
 }
 
-/* Título */
 .giftTitle {
-  margin: 0 0 14px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #111;
+  font-size: 28px;
+  line-height: 1.12;
+  margin: 0 0 10px;
+  color: #1b1b1b;
+  letter-spacing: -0.3px;
 }
 
-/* Texto */
 .giftText {
-  margin: 0 0 22px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
+  margin: 0 auto 18px;
+  max-width: 520px;
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: rgba(0, 0, 0, 0.68);
 }
 
-/* Acciones */
 .giftActions {
   display: flex;
   justify-content: center;
 }
 
-/* Botón dorado elegante */
 .giftBtn {
-  padding: 14px 26px;
-  border-radius: 999px;
-
-  background: var(--c-gold-light);
-  border: 1px solid #000;
-  color: #000;
-
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
+  border: none;
   cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+
+  background: var(--gold, #e7c66a);
+  color: #151515;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .giftBtn:active {
-  transform: scale(0.98);
+  transform: translateY(1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* Desktop */
-@media (min-width: 520px) {
-  .giftCard {
-    padding: 38px 34px;
+/* =========================
+   MODAL (PORTAL) - FIX STACK
+   ========================= */
+
+.giftModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  display: grid;
+  place-items: center;
+
+  /* ⚠️ súper arriba: no lo tapa Dresscode */
+  z-index: 999999;
+  padding: 22px 14px;
+}
+
+.giftModalShell {
+  width: min(560px, 100%);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(190, 150, 90, 0.35);
+
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.75),
+    0 0 0 8px rgba(190, 150, 90, 0.18),
+    0 22px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.giftModalInner {
+  position: relative;
+  border-radius: 24px;
+  background: var(--card-bg, #fffaf1);
+  padding: 22px 18px 18px;
+  text-align: center;
+}
+
+.giftModalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(190, 150, 90, 0.35);
+  background: rgba(255, 255, 255, 0.8);
+  color: #2a2a2a;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.giftModalTopIcon {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: rgba(160, 120, 70, 0.9);
+  border: 1.5px solid rgba(190, 150, 90, 0.35);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.giftModalTitle {
+  margin: 0 0 6px;
+  font-size: 42px;
+  letter-spacing: -0.6px;
+  color: #141414;
+}
+
+.giftModalSub {
+  margin: 0 auto 14px;
+  max-width: 420px;
+  color: rgba(0, 0, 0, 0.68);
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+/* Caja de datos */
+.giftBankBox {
+  margin: 12px auto 0;
+  width: min(520px, 100%);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  border: 2px solid rgba(190, 150, 90, 0.30);
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.75);
+  padding: 16px 14px;
+  text-align: left;
+}
+
+.giftBankRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.giftBankMeta {
+  min-width: 0;
+}
+
+.giftBankLabel {
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 15px;
+}
+
+.giftBankValue {
+  margin-top: 6px;
+  font-weight: 900;
+  color: #1b1b1b;
+  font-size: 22px;
+  line-height: 1.18;
+
+  /* evita cortes raros */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.mono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.3px;
+}
+
+.giftBankDivider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 14px 0;
+}
+
+.giftCopyBtn {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  border: 1.5px solid rgba(190, 150, 90, 0.55);
+  background: rgba(255, 255, 255, 0.9);
+  color: #2a2a2a;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.giftCopyBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.07);
+}
+
+.giftToast {
+  margin: 14px auto 0;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(190, 150, 90, 0.35);
+  color: rgba(0, 0, 0, 0.74);
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Mobile tuning */
+@media (max-width: 420px) {
+  .giftModalTitle {
+    font-size: 34px;
   }
 
-  .giftTitle {
-    font-size: 22px;
+  .giftBankValue {
+    font-size: 20px;
   }
 
-  .giftText {
-    font-size: 15px;
+  .giftCopyBtn {
+    padding: 10px 14px;
+    font-size: 16px;
   }
 }
