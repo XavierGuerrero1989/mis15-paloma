@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import RsvpModal from "../components/RsvpModal";
-import "./Dresscode.css";
+import "./dresscode.css";
 
 export default function Dresscode() {
   const { guestSlug } = useParams();
