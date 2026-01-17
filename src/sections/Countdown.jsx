@@ -51,10 +51,10 @@ export default function Countdown() {
 
   return (
     <section id="fecha" className="countdown">
-      <div className="container">
+      <div className="container countdownStack">
+        {/* CARD FECHA */}
         <div className="countdownCard">
           <div className="countdownIcon" aria-hidden="true">
-            {/* Ícono reloj outline */}
             <svg
               width="44"
               height="44"
@@ -71,13 +71,14 @@ export default function Countdown() {
           </div>
 
           <h2 className="countdownTitle">¿Cuándo?</h2>
-
           <p className="countdownDate">{fecha}</p>
 
           <h2 className="countdownTitle">¿A qué hora?</h2>
-
           <p className="countdownDate">De 21:00 a 05:00 hs</p>
+        </div>
 
+        {/* CARD CUENTA REGRESIVA */}
+        <div className="countdownCard">
           <h2 className="countdownTitle countdownCenter">Faltan</h2>
 
           {parts.done ? (

@@ -18,51 +18,35 @@
   text-align: center;
 }
 
-/* Texto principal */
+/* MIS XV */
 .heroTitle {
   margin: 0;
+  
   font-size: 36px;
-  line-height: 1.15;
-  font-weight: 600;
-  color: var(--c-gold-light);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #000;
   text-align: center;
-
-  /* borde negro sutil (stroke fake)
-  text-shadow:
-    -1px -1px 0 rgba(0,0,0,0.55),
-     1px -1px 0 rgba(0,0,0,0.55),
-    -1px  1px 0 rgba(0,0,0,0.55),
-     1px  1px 0 rgba(0,0,0,0.55); */
 }
 
+/* Paloma */
 .heroName {
-  margin-top: 60px;
+  margin-top: 40px;
   font-family: "Great Vibes", cursive;
-  font-size: 8vh;
+  font-size: 10vh;
   line-height: 1;
   font-weight: 400;
-  color: var(--c-gold-light);
+  color: #000;
   text-align: center;
-
-  /* borde negro sutil */
-  /* text-shadow:
-    -1px -1px 0 rgba(0,0,0,0.55),
-     1px -1px 0 rgba(0,0,0,0.55),
-    -1px  1px 0 rgba(0,0,0,0.55),
-     1px  1px 0 rgba(0,0,0,0.55); */
-
   letter-spacing: 1px;
 }
 
-
-
 @media (min-width: 520px) {
   .heroTitle {
-    font-size: 46px;
+    font-size: 44px;
   }
 
   .heroName {
     font-size: 56px;
   }
 }
-

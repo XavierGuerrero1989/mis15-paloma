@@ -3,7 +3,7 @@
 }
 
 .dresscodeCard {
-  background: rgba(255, 255, 255, 0.85);
+  background: #f9edf3; /* rosa pastel clarito */
   border-radius: var(--radius);
   padding: 28px 22px;
   text-align: center;

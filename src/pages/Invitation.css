@@ -3,7 +3,8 @@
   position: relative;
 
   /* fondo base */
-  background: var(--bg, #e9efe9);
+  /* background: var(--bg, #e9efe9); */
+  background: white;
 
   /* decoraciones */
   background-image: var(--invite-deco-images);

@@ -23,7 +23,7 @@ export default function Dresscode() {
           <h2 className="dresscodeTitle">Dress Code</h2>
 
           <p className="dresscodeText">
-            Te invitamos a vestir de manera <strong>elegante</strong>, acompañando el
+            Te invitamos a vestir de manera <strong>ELEGANTE</strong>, acompañando el
             espíritu de esta noche tan especial.
           </p>
 

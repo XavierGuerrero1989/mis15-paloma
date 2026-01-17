@@ -148,13 +148,12 @@ export default function Gift() {
           <p className="giftText">
             Compartir este momento juntos es lo que realmente importa.
             <br />
-            Si aun así querés hacerme un regalo, podés hacerlo a través de una
-            transferencia.
+            Si aun así querés hacerme un regalo, podés hacerlo AQUÍ
           </p>
 
           <div className="giftActions">
             <button className="giftBtn" onClick={() => setOpen(true)}>
-              VER DATOS BANCARIOS
+              VER DATOS
             </button>
           </div>
         </div>

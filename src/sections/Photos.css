@@ -3,7 +3,7 @@
 }
 
 .photosCard {
-  background: #ffffff;
+  background: #f9edf3; /* rosa pastel clarito */
   border-radius: var(--radius);
   padding: 22px 16px;
   text-align: center;

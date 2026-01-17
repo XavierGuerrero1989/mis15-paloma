@@ -1,8 +1,13 @@
 @import "./variables.css";
 
+:root {
+  color-scheme: light;
+}
+
 /* reset básico */
 * {
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -12,6 +17,7 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color: var(--text);
   background: var(--c-crudo);
+  color-scheme: light;
 }
 
 a {

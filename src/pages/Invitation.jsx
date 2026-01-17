@@ -7,6 +7,7 @@ import Photos from "../sections/Photos";
 import Gift from "../sections/Gift";
 import DresscodeRsvp from "../sections/DresscodeRsvp";
 import FinalQuote from "../sections/FinalQuote";
+import GreetingCard from "../sections/GreetingCard";
 
 import "./Invitation.css";
 
@@ -162,6 +163,7 @@ export default function Invitation() {
       )}
 
       <Hero />
+      <GreetingCard />
       <Countdown />
       <Venue />
       <Photos />

@@ -12,7 +12,7 @@
   text-align: center;
 
   /* look como Gift */
-  background: var(--card-bg, #fffaf1);
+  background: #f9edf3; /* rosa pastel clarito */
   border-radius: 26px;
   padding: 34px 18px 26px;
 

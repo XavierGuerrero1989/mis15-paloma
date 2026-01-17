@@ -1,5 +1,6 @@
 import "./Venue.css";
 
+const VENUE_OFICIALNAME = "GOLF CLUB EVENTOS";
 const VENUE_NAME = "Salón Golf";
 const VENUE_ADDRESS = "Ruta de la Tradición 9051 (Cno de Cintura)";
 const VENUE_EXTRA = "Con estacionamiento";
@@ -32,6 +33,7 @@ export default function Venue() {
 
           <h2 className="venueTitle">¿Dónde?</h2>
 
+          <p className="venueName">{VENUE_OFICIALNAME}</p>
           <p className="venueName">{VENUE_NAME}</p>
           <p className="venueAddress">{VENUE_ADDRESS}</p>
           <p className="venueExtra">{VENUE_EXTRA}</p>

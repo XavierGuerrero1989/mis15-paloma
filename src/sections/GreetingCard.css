@@ -1,0 +1,23 @@
+.greeting {
+  padding: 36px 0;
+}
+
+.greetingCard {
+  background: #f9edf3;
+
+
+  border-radius: 18px;
+  padding: 28px 22px;
+  text-align: center;
+
+  border: 1.5px solid var(--c-gold-light);
+  outline: 1px solid rgba(230, 201, 122, 0.4);
+  outline-offset: -8px;
+}
+
+.greetingText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #111;
+}

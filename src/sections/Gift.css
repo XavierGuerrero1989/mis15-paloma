@@ -5,7 +5,7 @@
 .giftCard {
   position: relative;
   border-radius: 26px;
-  background: var(--card-bg, #fffaf1);
+  background: #f9edf3; /* rosa pastel clarito */
   padding: 34px 18px 26px;
   text-align: center;
 
@@ -89,7 +89,7 @@
 .giftModalShell {
   width: min(560px, 100%);
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.72);
+  bbackground: #f9edf3; /* rosa pastel clarito */
   border: 2px solid rgba(190, 150, 90, 0.35);
 
   box-shadow:
@@ -102,7 +102,7 @@
 .giftModalInner {
   position: relative;
   border-radius: 24px;
-  background: var(--card-bg, #fffaf1);
+  background: #f9edf3; /* rosa pastel clarito */
   padding: 22px 18px 18px;
   text-align: center;
 }
