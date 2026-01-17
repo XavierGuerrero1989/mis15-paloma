@@ -8,6 +8,7 @@ import Gift from "../sections/Gift";
 import DresscodeRsvp from "../sections/DresscodeRsvp";
 import FinalQuote from "../sections/FinalQuote";
 import GreetingCard from "../sections/GreetingCard";
+import FinalPhoto from "../sections/FinalPhoto";
 
 import "./Invitation.css";
 
@@ -169,6 +170,7 @@ export default function Invitation() {
       <Photos />
       <Gift />
       <DresscodeRsvp />
+      <FinalPhoto />
       <FinalQuote />
     </div>
   );
