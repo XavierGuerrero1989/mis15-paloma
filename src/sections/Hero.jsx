@@ -9,7 +9,7 @@ export default function Hero() {
       style={{ backgroundImage: `url(${HERO_IMAGE})` }}
     >
       <div className="heroInner">
-        <h1 className="heroTitle">MIS XV</h1>
+        <h1 className="heroTitle">MIS "XV"</h1>
         <div className="heroName">Paloma</div>
       </div>
     </section>
