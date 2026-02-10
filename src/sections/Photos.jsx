@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./Photos.css";
 
-const PHOTOS = Array.from({ length: 7 }, (_, i) => `/photo${i + 1}.jpeg`);
+const PHOTOS = Array.from({ length: 10 }, (_, i) => `/photo${i + 1}.jpeg`);
 
 export default function Photos() {
   const carouselRef = useRef(null);
